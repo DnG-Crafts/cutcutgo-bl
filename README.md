@@ -91,6 +91,19 @@ The white carriage light is on RG7 (on when driven low). The bootloader doesn't 
 
 USB uses the USB1 module (D1+/D1-, pins 57/56), with VBUS sensing on pin 54. On this chip the USB PLL "ready" flag (`CLKSTAT.UPLLRDY`) never sets, even though USB works, so the clock code gives the PLLs a fixed time to lock rather than waiting for it.
 
+
+## Download Boolloader
+The latest pre-compiled maker3 compatible bootloader is available on this [Release page](https://github.com/DnG-Crafts/cutcutgo-bl/releases)
+
+
+## Download Firmware
+The latest pre-compiled maker3 compatible firmware is available on this [Release page](https://github.com/DnG-Crafts/cutcutgo/releases)
+
+
+## Download CutCraft
+The latest pre-compiled design and send software with maker3(cutcutgo) support is available on this [Release page](https://github.com/DnG-Crafts/CutCraft/releases)
+
+
 ### Not done
 
 - The MCC/Harmony project files (`.mc3`, `.mhc`) for the MX470 were removed. The config code was ported by hand, so regenerating it with MCC is not set up.
