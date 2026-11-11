@@ -71,7 +71,7 @@ Buttons (all active low, with pull-ups on the board):
 |---|---|
 | Power | RF13 |
 | Load/Unload | RF12 |
-| Cricut logo | RE15 |
+| Play | RE15 |
 | Pause | RE14 |
 
 LEDs (all active high):
@@ -82,7 +82,7 @@ LEDs (all active high):
 | Power ring, red | RC10 |
 | Power ring, blue | RD15 |
 | Load/Unload, white | RD12 |
-| Cricut logo, white | RD13 |
+| Play, white | RD13 |
 | Pause, blue | RD14 |
 
 The white carriage light is on RG7 (on when driven low). The bootloader doesn't use it.
