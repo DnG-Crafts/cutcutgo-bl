@@ -46,6 +46,7 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "device.h"
+#include "clock_config.h"
 #include "buttons.h"
 #include "led.h"
 
@@ -57,6 +58,11 @@
 // ****************************************************************************
 // ****************************************************************************
 
+/*
+ * Configuration bits for PIC32MK1024MCF100.
+ * Oscillator-dependent settings come from clock_config.h.
+ */
+
 /*** DEVCFG0 ***/
 #ifdef __DEBUG
     #pragma config DEBUG =      ON
@@ -65,39 +71,78 @@
 #endif
 #pragma config JTAGEN =     OFF
 #pragma config ICESEL =     ICS_PGx1
-#pragma config PWP =        OFF
-#pragma config BWP =        OFF
+#pragma config TRCEN =      OFF
+#pragma config BOOTISA =    MIPS32
+#pragma config FSLEEP =     OFF
+#pragma config DBGPER =     PG_ALL
+#pragma config SMCLR =      MCLR_NORM
+#pragma config SOSCGAIN =   GAIN_2X
+#pragma config SOSCBOOST =  ON
+#pragma config POSCGAIN =   GAIN_LEVEL_3
+#pragma config POSCBOOST =  ON
+#pragma config EJTAGBEN =   NORMAL
 #pragma config CP =         OFF
 
-
 /*** DEVCFG1 ***/
-#pragma config FNOSC =      PRIPLL
-#pragma config FPBDIV =     DIV_2
+#pragma config FNOSC =      SPLL
+#pragma config DMTINTV =    WIN_127_128
 #pragma config FSOSCEN =    OFF
 #pragma config IESO =       ON
-#pragma config POSCMOD =    HS
+#if (BOARD_POSC_IS_CRYSTAL == 1)
+    #pragma config POSCMOD =    HS
+#else
+    #pragma config POSCMOD =    EC
+#endif
 #pragma config OSCIOFNC =   OFF
-#pragma config FCKSM =      CSDCMD
+#pragma config FCKSM =      CSECME
 #pragma config WDTPS =      PS1048576
+#pragma config WDTSPGM =    STOP
 #pragma config FWDTEN =     OFF
-#pragma config WINDIS =     OFF
+#pragma config WINDIS =     NORMAL
 #pragma config FWDTWINSZ =  WINSZ_25
-
+#pragma config DMTCNT =     DMT31
+#pragma config FDMTEN =     OFF
 
 /*** DEVCFG2 ***/
-#pragma config FPLLIDIV =   DIV_4
-#pragma config FPLLMUL =    MUL_24
-#pragma config FPLLODIV =   DIV_1
+/* SYSCLK = POSC / FPLLIDIV * FPLLMULT / FPLLODIV = 120 MHz (VCO = 480 MHz) */
+#if (BOARD_POSC_MHZ == 12)
+    #pragma config FPLLIDIV =   DIV_1
+    #pragma config FPLLRNG =    RANGE_8_16_MHZ
+    #pragma config FPLLMULT =   MUL_40
+#elif (BOARD_POSC_MHZ == 24)
+    #pragma config FPLLIDIV =   DIV_2
+    #pragma config FPLLRNG =    RANGE_8_16_MHZ
+    #pragma config FPLLMULT =   MUL_40
+#elif (BOARD_POSC_MHZ == 8)
+    #pragma config FPLLIDIV =   DIV_1
+    #pragma config FPLLRNG =    RANGE_5_10_MHZ
+    #pragma config FPLLMULT =   MUL_60
+#endif
+#pragma config FPLLICLK =   PLL_POSC
+#pragma config FPLLODIV =   DIV_4
+#pragma config VBATBOREN =  ON
+#pragma config DSBOREN =    ON
+#pragma config DSWDTPS =    DSPS32
+#pragma config DSWDTOSC =   LPRC
+#pragma config DSWDTEN =    OFF
+#pragma config FDSEN =      OFF
+#pragma config BORSEL =     HIGH
 #pragma config UPLLEN =     ON
-#pragma config UPLLIDIV =   DIV_4
 
 /*** DEVCFG3 ***/
-#pragma config FSRSSEL =    PRIORITY_7
-#pragma config FVBUSONIO =  ON
 #pragma config USERID =     0xffff
+#pragma config PWMLOCK =    OFF
+#pragma config FUSBIDIO2 =  ON
+#pragma config FVBUSIO2 =   ON
+#pragma config PGL1WAY =    ON
 #pragma config PMDL1WAY =   ON
 #pragma config IOL1WAY =    ON
-#pragma config FUSBIDIO =   ON
+#pragma config FUSBIDIO1 =  ON
+#pragma config FVBUSIO1 =   ON
+
+/*** BF1SEQ ***/
+#pragma config TSEQ =       0x0
+#pragma config CSEQ =       0xffff
 
 
 
@@ -170,7 +215,7 @@ const DRV_USBFS_INIT drvUSBFSInit =
 
 
 	/* Interrupt Source for USB module */
-	.interruptSource = INT_SOURCE_USB,
+	.interruptSource = INT_SOURCE_USB_1,
 
 
     
@@ -237,12 +282,9 @@ void SYS_Initialize_Min ( void* data )
     /* Configure KSEG0 as cacheable memory. This is needed for Prefetch Buffer */
     __builtin_mtc0(16, 0,(__builtin_mfc0(16, 0) | 0x3));
 
-    /* Configure Flash Wait States and Prefetch */
-    CHECONbits.PFMWS = 2;
-    CHECONbits.PREFEN = 3;
-
-    /* Set the SRAM wait states to zero */
-    BMXCONbits.BMXWSDRM = 0;
+    /* Configure Flash Wait States and Prefetch (120 MHz SYSCLK) */
+    CHECONbits.PFMWS = 3;
+    CHECONbits.PREFEN = 0;   /* same as Microchip's PIC32MK reference config */
 
 
     GPIO_Initialize();

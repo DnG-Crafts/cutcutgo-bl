@@ -1,116 +1,77 @@
 #include "led.h"
 
-/**
- * Cricut Maker led initialization routine.
- */
 
+/* Make an LED pin a digital output, initially off (LEDs are active high). */
+static void led_pin_init(GPIO_PIN pin)
+{
+    uint32_t port = ((uint32_t)pin) >> 4;
+    uint32_t bit = ((uint32_t)pin) & 0x0FU;
+
+    /* ANSELxCLR (+4 bytes); ports repeat every 0x100 bytes. */
+    *(volatile uint32_t *)((uint32_t)&ANSELA + (port * 0x100U) + 0x04U) = (1UL << bit);
+    GPIO_PinClear(pin);
+    GPIO_PinOutputEnable(pin);
+}
+
+static void led_write(GPIO_PIN pin, bool on)
+{
+    if (on)
+    {
+        GPIO_PinSet(pin);
+    }
+    else
+    {
+        GPIO_PinClear(pin);
+    }
+}
+
+/**
+ * Cricut Maker 3 front-panel LED initialization (all off).
+ */
 void led_init(void)
 {
-    /* Force RE4 to digital I/O. */
-    ANSELEbits.ANSE4 = 0;
-    ANSELBbits.ANSB11 = 0;
-    ANSELBbits.ANSB10 = 0;
-    
-    /* Initialize LEDs */
-    GPIO_PinOutputEnable(LED_LOGO);
-    GPIO_PinOutputEnable(LED_PAUSE);
-    GPIO_PinOutputEnable(LED_PWR_RED);
-    GPIO_PinOutputEnable(LED_PWR_WHITE);
-    GPIO_PinOutputEnable(LED_PWR_BLUE);
-    GPIO_PinOutputEnable(LED_UPDOWN);
-    
-    /* Set default LEDs state. */
-    GPIO_PinClear(LED_LOGO);
-    GPIO_PinClear(LED_PAUSE);
-    GPIO_PinClear(LED_PWR_RED);
-    GPIO_PinClear(LED_PWR_WHITE);
-    GPIO_PinClear(LED_PWR_BLUE);
-    GPIO_PinClear(LED_UPDOWN);
+    led_pin_init(LED_PWR_WHITE);
+    led_pin_init(LED_PWR_RED);
+    led_pin_init(LED_PWR_BLUE);
+    led_pin_init(LED_UPDOWN);
+    led_pin_init(LED_LOGO);
+    led_pin_init(LED_PAUSE);
 }
 
-
-/**
- * Set front panel logo LED state.
- * @param enable    true to switch on, false to switch off
- */
-
+/** Cricut logo button LED. */
 void led_set_logo(bool enable)
 {
-    if (enable) {
-        GPIO_PinSet(LED_LOGO);
-    } else {
-        GPIO_PinClear(LED_LOGO);
-    }
+    led_write(LED_LOGO, enable);
 }
 
-
-/**
- * Set front panel pause LED state.
- * @param enable    true to switch on, false to switch off
- */
-
+/** Pause button LED. */
 void led_set_pause(bool enable)
 {
-    if (enable) {
-        GPIO_PinSet(LED_PAUSE);
-    } else {
-        GPIO_PinClear(LED_PAUSE);
-    }
+    led_write(LED_PAUSE, enable);
 }
 
-
 /**
- * Set front panel power LED state.
- * @param blue  true to switch on the power blue LED, false to switch off.
- * @param white true to switch on the power white LED, false to switch off.
- * @param red   true to switch on the power red LED, false to switch off.
+ * Power ring colour.
+ * @param blue  blue on/off
+ * @param white white on/off
+ * @param red   red on/off
  */
-
 void led_set_power(bool blue, bool white, bool red)
 {
-    /* Red */
-    if (red) {
-        GPIO_PinSet(LED_PWR_RED);
-    } else {
-        GPIO_PinClear(LED_PWR_RED);
-    }
-
-    /* White */
-    if (white) {
-        GPIO_PinSet(LED_PWR_WHITE);
-    } else {
-        GPIO_PinClear(LED_PWR_WHITE);
-    }
-
-    /* Blue */
-    if (blue) {
-        GPIO_PinSet(LED_PWR_BLUE);
-    } else {
-        GPIO_PinClear(LED_PWR_BLUE);
-    }
+    led_write(LED_PWR_RED, red);
+    led_write(LED_PWR_WHITE, white);
+    led_write(LED_PWR_BLUE, blue);
 }
 
-
-/**
- * Set front panel up/down LED state.
- * @param enable    true to switch on, false to switch off
- */
-
+/** Load/Unload button LED. */
 void led_set_updown(bool enable)
 {
-    if (enable) {
-        GPIO_PinSet(LED_UPDOWN);
-    } else {
-        GPIO_PinClear(LED_UPDOWN);
-    }
+    led_write(LED_UPDOWN, enable);
 }
 
-
-/**
- * Toggle front panel up/down LED state.
- */
-
+/** Toggle the Load/Unload button LED. */
 void led_toggle_updown(void)
 {
     GPIO_PinToggle(LED_UPDOWN);
 }
+

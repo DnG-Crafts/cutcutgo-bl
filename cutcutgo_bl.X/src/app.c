@@ -57,6 +57,12 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "fat32.h"
 #include "led.h"
 #include "reset.h"
+#include "clock_config.h"
+
+
+/* How long the power button must be held to reset (no upload in progress). */
+#define RESET_HOLD_MS           4000UL
+#define RESET_HOLD_TICKS        ((CORE_TIMER_FREQ_HZ / 1000UL) * RESET_HOLD_MS)
 
 // *****************************************************************************
 // *****************************************************************************
@@ -80,7 +86,9 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APP_DATA appData;
+/* Core timer value when the power button was first seen pressed. */
 uint32_t counter = 0;
+bool power_held = false;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -218,16 +226,26 @@ void APP_Tasks ( void )
         
         case APP_STATE_RUNNING:
 
+            /* Upload complete and acknowledged: start the new firmware. */
+            if (is_fat32_upload_finished())
+            {
+                reset_soft();
+            }
+
             /* If power button is pressed, reset the device, except if an upload is in progress. */
             if (!is_fat32_upload_started())
             {
                 if (is_power_button_pressed())
                 {
-                    /* Counter is incremented*/
-                    counter++;
+                    /* Remember when the press started (core timer). */
+                    if (!power_held)
+                    {
+                        power_held = true;
+                        counter = _CP0_GET_COUNT();
+                    }
 
-                    /* When counter reaches 0xda0ce, reset MCU (simili-timer). */
-                    if (counter > 0xda0cd)
+                    /* Held for ~4 seconds: reset MCU. */
+                    if ((uint32_t)(_CP0_GET_COUNT() - counter) >= RESET_HOLD_TICKS)
                     {
                         /* Switch off Power LED and UpDown LED. */
                         led_set_power(false, false, false);
@@ -240,6 +258,7 @@ void APP_Tasks ( void )
                 else
                 {
                     /* Button has been released, reset counter. */
+                    power_held = false;
                     counter=0;
                 }
             }

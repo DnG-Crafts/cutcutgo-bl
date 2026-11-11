@@ -52,12 +52,17 @@
 
 #include "buttons.h"
 #include "led.h"
+#include "clock_config.h"
 
 #define  APP_ADDR               0x9d010000
 #define WORD_ALIGN_MASK         (~(sizeof(uint32_t) - 1))
 
 
-/* Counter used as a timer emulation (for button press) */
+/* How long the power button must be held at startup. */
+#define POWER_HOLD_MS           3000UL
+#define POWER_HOLD_TICKS        ((CORE_TIMER_FREQ_HZ / 1000UL) * POWER_HOLD_MS)
+
+/* Accumulated time (core timer ticks) the power button has been held. */
 uint32_t pwr_counter=0;
 
 /**
@@ -113,7 +118,7 @@ bool IsUsbMsdTriggered(void)
         return true;
     }
     
-    /* Pause button is pressed. */
+    /* Pause button held at power-on: stay in the bootloader (update mode). */
     if (is_pause_button_pressed())
     {
         /* We must spawn a MSD. */
@@ -136,19 +141,24 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize_Min( NULL );
     
-    /* Wait for power button to be pressed. */
+    /* Wait for power button to be pressed.
+     * Uses the MIPS core timer so the hold time does not depend on SYSCLK
+     * (the original PIC32MX build used a calibrated busy loop). */
+    uint32_t last = _CP0_GET_COUNT();
     while (1)
     {
+        uint32_t now = _CP0_GET_COUNT();
         if (is_power_button_pressed())
         {
-            pwr_counter++;
-            
+            pwr_counter += (now - last);
+
             /* Power button must be pressed during ~3 seconds. */
-            if (pwr_counter >= 0x442000)
+            if (pwr_counter >= POWER_HOLD_TICKS)
             {
                 break;
             }
         }
+        last = now;
     }
     
     if (IsUsbMsdTriggered())

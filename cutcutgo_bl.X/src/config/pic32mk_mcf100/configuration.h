@@ -120,7 +120,9 @@ extern "C" {
 
 /*** USB Driver Configuration ***/
 
-/* Maximum USB driver instances */
+/* Maximum USB driver instances. The Maker 3's USB connector is on the USB1
+ * module (D1+/D1-, pins 57/56), with VBUS sensed on pin 54. */
+
 #define DRV_USBFS_INSTANCES_NUMBER                        1
 
 /* Interrupt mode enabled */

@@ -60,7 +60,12 @@
 typedef enum {
 
     USB_ID_1 = _USB_BASE_ADDRESS,
+#ifdef _USB2_BASE_ADDRESS
+    USB_ID_2 = _USB2_BASE_ADDRESS,
+    USB_NUMBER_OF_MODULES = 2
+#else
     USB_NUMBER_OF_MODULES = 1
+#endif
 	
 } USB_MODULE_ID;
 

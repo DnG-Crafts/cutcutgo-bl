@@ -11,6 +11,8 @@
 #include "fat32.h"
 #include "led.h"
 #include "reset.h"
+#include "clock_config.h"
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -149,6 +151,18 @@ static uint8_t page_buffer[4096];
 /* UF2 block tracking. */
 static uint32_t g_blocks_written = 0;
 static uint32_t g_nb_blocks_expected = 0;
+
+/*
+ * Restart after an upload. The last UF2 block must be acknowledged, and the PC
+ * then still writes the file's FAT and directory entries, so wait until it has
+ * stopped writing. Resetting sooner makes Windows report the drive as gone
+ * (error 0x800701B1).
+ */
+#define UPLOAD_QUIET_TICKS      (CORE_TIMER_FREQ_HZ)            /* 1 s with no write */
+#define UPLOAD_MAX_WAIT_TICKS   (CORE_TIMER_FREQ_HZ * 5UL)      /* restart after 5 s regardless */
+static volatile bool g_upload_done = false;
+static volatile uint32_t g_upload_done_time = 0;
+static volatile uint32_t g_last_write_time = 0;
 
 /**
  * This is a fake directory sector used as a read/write region. The remote host can write
@@ -356,6 +370,7 @@ void DRV_FAT32_GenerateRootDirectory(unsigned char *buffer)
     /* Create volume label. */
     memcpy(p_rootdir->dos_name, "Cutcutgo   ", 11);
     p_rootdir->attributes = 0x08; /* Volume label. */        
+
 }
 
 
@@ -483,10 +498,14 @@ void DRV_FAT32_AsyncRead
     }   
     
     /* If the host tries to read any other block, return a buffer full of zeroes =) . */
-    if (nBlock > 0)
+    while (nBlock > 0)
     {
-        /* Handle block read. */
-        memset(&((unsigned char *)targetBuffer)[offset], 0, nBlock*512);
+        {
+            memset(&((unsigned char *)targetBuffer)[offset], 0, 512);
+        }
+        blockStart++;
+        nBlock--;
+        offset += 512;
     }
     
     *commandHandle = 0x42;
@@ -609,6 +628,8 @@ void DRV_FAT32_AsyncEraseWrite
     int i;
     uint32_t page_number, block_offset, block_addr, target_addr;
     
+    g_last_write_time = _CP0_GET_COUNT();
+
     /* Are we writing to the FAT ? */
     if ((blockStart == 9) || (blockStart == 73))
     {
@@ -623,7 +644,8 @@ void DRV_FAT32_AsyncEraseWrite
         if ((uf2_block->magicStart0 == UF2_MAGIC0) && 
             (uf2_block->magicStart1 == UF2_MAGIC1) && 
             (uf2_block->magicEnd == UF2_MAGICEND) &&
-            (uf2_block->familyID == UF2_FAMILYID)
+            (uf2_block->familyID == UF2_FAMILYID) &&
+            !g_upload_done
         ) {
             /* Track UF2 blocks. */
             if (g_nb_blocks_expected == 0)
@@ -633,11 +655,11 @@ void DRV_FAT32_AsyncEraseWrite
             }
             
             /* Make sure we are going to overwrite the application memory. */
-            if ((uf2_block->targetAddr >= 0x1D010000) && (uf2_block->targetAddr < 0x1D080000))
+            if ((uf2_block->targetAddr >= APP_FLASH_START_PA) && (uf2_block->targetAddr < APP_FLASH_END_PA))
             {
                 
                 /* Write the UF2 block in flash memory (synchronous). */
-                target_addr = uf2_block->targetAddr - 0x1D010000;
+                target_addr = uf2_block->targetAddr - APP_FLASH_START_PA;
 
                 page_number = target_addr / 4096;
                 block_addr = page_number * 4096; /* Compute flash address */
@@ -678,11 +700,12 @@ void DRV_FAT32_AsyncEraseWrite
             g_blocks_written++;
             if (g_blocks_written >= g_nb_blocks_expected)
             {
-                /* We wrote all the blocks, restart ! */
+                /* We wrote all the blocks: APP_Tasks restarts once the PC has finished. */
                 led_set_power(false, false, true);
                 led_set_updown(true);
 
-                reset_soft();
+                g_upload_done_time = _CP0_GET_COUNT();
+                g_upload_done = true;
             }
         }
     }
@@ -781,6 +804,20 @@ uintptr_t DRV_FAT32_AddressGet
  * 
  * @return true if we are writing an application into flash, false otherwise.
  */
+/* True once the upload is complete and the PC has finished writing. */
+bool is_fat32_upload_finished(void)
+{
+    uint32_t last, done;
+
+    if (!g_upload_done) { return false; }
+
+    /* Read the times before the counter so a write landing here can't look like the future. */
+    last = g_last_write_time;
+    done = g_upload_done_time;
+    return (((uint32_t)(_CP0_GET_COUNT() - last) >= UPLOAD_QUIET_TICKS) ||
+            ((uint32_t)(_CP0_GET_COUNT() - done) >= UPLOAD_MAX_WAIT_TICKS));
+}
+
 bool is_fat32_upload_started(void)
 {
     return (g_nb_blocks_expected != 0);

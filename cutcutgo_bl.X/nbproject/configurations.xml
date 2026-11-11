@@ -5,203 +5,201 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mx470_curiosity" projectFiles="true">
-          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
-            <itemPath>src/config/pic32mx470_curiosity/bsp/bsp.h</itemPath>
-          </logicalFolder>
+        <logicalFolder name="f1" displayName="pic32mk_mcf100" projectFiles="true">
           <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f1" displayName="memory" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/driver/memory/drv_memory.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/driver/memory/drv_memory_definitions.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/driver/memory/drv_memory_nvm.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/driver/memory/src/drv_memory_local.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/memory/drv_memory.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/memory/drv_memory_nvm.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/memory/src/drv_memory_local.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="usb" projectFiles="true">
               <logicalFolder name="f1" displayName="usbfs" projectFiles="true">
                 <logicalFolder name="f1" displayName="src" projectFiles="true">
                   <logicalFolder name="f1" displayName="templates" projectFiles="true">
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usbfs_registers.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ActivityPending_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ActivityPending_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ALL_Interrupt_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ALL_Interrupt_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_AutomaticSuspend_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_AutomaticSuspend_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_BDTBaseAddress_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_BDTBaseAddress_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_BDTFunctions_PIC32.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_BDTFunctions_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_BufferFreeze_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_BufferFreeze_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_DeviceAddress_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_DeviceAddress_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EP0LowSpeedConnect_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EP0LowSpeedConnect_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EP0NAKRetry_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EP0NAKRetry_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnControlTransfer_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnControlTransfer_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnHandshake_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnHandshake_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnRxEnableEnhanced_PIC32.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnRxEnableEnhanced_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnStall_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnStall_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnTxRx_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EPnTxRx_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ERR_Interrupt_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ERR_Interrupt_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ERR_InterruptStatus_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ERR_InterruptStatus_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EyePattern_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_EyePattern_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_FrameNumber_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_FrameNumber_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_GEN_Interrupt_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_GEN_Interrupt_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_GEN_InterruptStatus_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_GEN_InterruptStatus_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_HostBusyWithToken_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_HostBusyWithToken_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_HostGeneratesReset_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_HostGeneratesReset_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastDirection_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastDirection_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastEndpoint_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastEndpoint_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastPingPong_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastPingPong_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastTransactionDetails_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LastTransactionDetails_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LiveJState_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LiveJState_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LiveSingleEndedZero_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_LiveSingleEndedZero_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ModuleBusy_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ModuleBusy_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ModulePower_32Bit16Bit.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ModulePower_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_NextTokenSpeed_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_NextTokenSpeed_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OnChipPullup_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OnChipTransceiver_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OpModeSelect_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OpModeSelect_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_ASessionValid_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_ASessionValid_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_BSessionEnd_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_BSessionEnd_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_IDPinState_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_IDPinState_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_Interrupt_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_Interrupt_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_InterruptStatus_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_InterruptStatus_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_LineState_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_LineState_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_PullUpPullDown_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_PullUpPullDown_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_SessionValid_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_SessionValid_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_VbusCharge_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_VbusCharge_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_VbusDischarge_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_VbusDischarge_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_VbusPowerOnOff_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_OTG_VbusPowerOnOff_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_PacketTransfer_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_PacketTransfer_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_PingPongMode_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ResumeSignaling_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_ResumeSignaling_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_SleepEntryGuard_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_SleepEntryGuard_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_SOFThreshold_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_SOFThreshold_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_SpeedControl_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_StartOfFrames_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_StartOfFrames_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_StopInIdle_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_StopInIdle_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_Suspend_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_Suspend_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_TokenEP_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_TokenEP_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_TokenPID_Default.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_TokenPID_Unsupported.h</itemPath>
-                    <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/templates/usb_UOEMonitor_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usbfs_registers.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ActivityPending_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ActivityPending_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ALL_Interrupt_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ALL_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_AutomaticSuspend_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_AutomaticSuspend_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_BDTBaseAddress_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_BDTBaseAddress_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_BDTFunctions_PIC32.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_BDTFunctions_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_BufferFreeze_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_BufferFreeze_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_DeviceAddress_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_DeviceAddress_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EP0LowSpeedConnect_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EP0LowSpeedConnect_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EP0NAKRetry_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EP0NAKRetry_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnControlTransfer_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnControlTransfer_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnHandshake_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnHandshake_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnRxEnableEnhanced_PIC32.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnRxEnableEnhanced_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnStall_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnStall_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnTxRx_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EPnTxRx_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ERR_Interrupt_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ERR_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ERR_InterruptStatus_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ERR_InterruptStatus_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EyePattern_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_EyePattern_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_FrameNumber_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_FrameNumber_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_GEN_Interrupt_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_GEN_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_GEN_InterruptStatus_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_GEN_InterruptStatus_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_HostBusyWithToken_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_HostBusyWithToken_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_HostGeneratesReset_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_HostGeneratesReset_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastDirection_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastDirection_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastEndpoint_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastEndpoint_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastPingPong_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastPingPong_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastTransactionDetails_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LastTransactionDetails_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LiveJState_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LiveJState_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LiveSingleEndedZero_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_LiveSingleEndedZero_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ModuleBusy_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ModuleBusy_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ModulePower_32Bit16Bit.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ModulePower_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_NextTokenSpeed_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_NextTokenSpeed_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OnChipPullup_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OnChipTransceiver_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OpModeSelect_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OpModeSelect_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_ASessionValid_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_ASessionValid_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_BSessionEnd_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_BSessionEnd_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_IDPinState_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_IDPinState_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_Interrupt_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_InterruptStatus_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_InterruptStatus_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_LineState_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_LineState_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_PullUpPullDown_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_PullUpPullDown_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_SessionValid_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_SessionValid_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_VbusCharge_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_VbusCharge_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_VbusDischarge_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_VbusDischarge_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_VbusPowerOnOff_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_OTG_VbusPowerOnOff_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_PacketTransfer_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_PacketTransfer_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_PingPongMode_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ResumeSignaling_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_ResumeSignaling_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_SleepEntryGuard_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_SleepEntryGuard_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_SOFThreshold_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_SOFThreshold_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_SpeedControl_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_StartOfFrames_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_StartOfFrames_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_StopInIdle_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_StopInIdle_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_Suspend_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_Suspend_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_TokenEP_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_TokenEP_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_TokenPID_Default.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_TokenPID_Unsupported.h</itemPath>
+                    <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/templates/usb_UOEMonitor_Unsupported.h</itemPath>
                   </logicalFolder>
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/drv_usbfs_variant_mapping.h</itemPath>
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/drv_usbfs_local.h</itemPath>
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/plib_usbfs.h</itemPath>
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/plib_usbfs_header.h</itemPath>
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/usbfs_registers.h</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/drv_usbfs_variant_mapping.h</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/drv_usbfs_local.h</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/plib_usbfs.h</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/plib_usbfs_header.h</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/usbfs_registers.h</itemPath>
                 </logicalFolder>
-                <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/drv_usbfs.h</itemPath>
+                <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/drv_usbfs.h</itemPath>
               </logicalFolder>
-              <itemPath>src/config/pic32mx470_curiosity/driver/usb/drv_usb.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/driver/usb/drv_usb_external_dependencies.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/usb/drv_usb.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/usb/drv_usb_external_dependencies.h</itemPath>
             </logicalFolder>
-            <itemPath>src/config/pic32mx470_curiosity/driver/driver.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/driver/driver_common.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/driver/driver.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/driver/driver_common.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="osal" projectFiles="true">
-            <itemPath>src/config/pic32mx470_curiosity/osal/osal.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/osal/osal_definitions.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/osal/osal_impl_basic.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/osal/osal.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/osal/osal_definitions.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/clk/plib_clk.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="evic" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/evic/plib_evic.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/evic/plib_evic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="gpio" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/gpio/plib_gpio.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="nvm" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/nvm/plib_nvm.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/nvm/plib_nvm.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f5" displayName="system" projectFiles="true">
             <logicalFolder name="f1" displayName="debug" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/system/debug/sys_debug.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="int" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/system/int/sys_int.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/system/int/sys_int_mapping.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/system/int/sys_int.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <itemPath>src/config/pic32mx470_curiosity/system/system.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/system/system_common.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/system/system_module.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/system/system_media.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/system/system.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/system/system_common.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/system/system_module.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/system/system_media.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f6" displayName="usb" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_device_msd_local.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_device_local.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_device_mapping.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_device_function_driver.h</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_external_dependencies.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_device_msd_local.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_device_local.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_device_mapping.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_device_function_driver.h</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_external_dependencies.h</itemPath>
             </logicalFolder>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_device_msd.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_msd.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/scsi.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_host_client_driver.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_host_hub_interface.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_host.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_hub.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_device.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_common.h</itemPath>
-            <itemPath>src/config/pic32mx470_curiosity/usb/usb_chapter_9.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_device_msd.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_msd.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/scsi.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_host_client_driver.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_host_hub_interface.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_host.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_hub.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_device.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_common.h</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/usb/usb_chapter_9.h</itemPath>
           </logicalFolder>
-          <itemPath>src/config/pic32mx470_curiosity/device.h</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/toolchain_specifics.h</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/definitions.h</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/interrupts.h</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/user.h</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/configuration.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/device.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/toolchain_specifics.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/definitions.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/interrupts.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/user.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/configuration.h</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/clock_config.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>src/app.h</itemPath>
@@ -213,32 +211,14 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="pic32mx470_curiosity.mhc"
-                     projectFiles="true">
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/BSP_PIC32MX470_Curiosity_Development_Board.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/core.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/dfp.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/drv_memory.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/drv_usbfs_v1.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/GraphSettings.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/nvm.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/project.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/settings.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/usb_device.yml</itemPath>
-        <itemPath>src/config/pic32mx470_curiosity/pic32mx470_curiosity.mhc/usb_device_msd.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>src/config/pic32mx470_curiosity/harmony-manifest-success.yml</itemPath>
-      <itemPath>msd_basic_pic32mx470_curiosity.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mx470_curiosity" projectFiles="true">
-          <itemPath>src/config/pic32mx470_curiosity/p32MX470F512H.ld</itemPath>
+        <logicalFolder name="f1" displayName="pic32mk_mcf100" projectFiles="true">
+          <itemPath>src/config/pic32mk_mcf100/p32MK1024MCF100.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -246,57 +226,54 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mx470_curiosity" projectFiles="true">
-          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
-            <itemPath>src/config/pic32mx470_curiosity/bsp/bsp.c</itemPath>
-          </logicalFolder>
+        <logicalFolder name="f1" displayName="pic32mk_mcf100" projectFiles="true">
           <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f1" displayName="memory" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/driver/memory/src/drv_memory_nvm.c</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/driver/memory/src/drv_memory.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/memory/src/drv_memory_nvm.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/driver/memory/src/drv_memory.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="usb" projectFiles="true">
               <logicalFolder name="f1" displayName="usbfs" projectFiles="true">
                 <logicalFolder name="f1" displayName="src" projectFiles="true">
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/drv_usbfs.c</itemPath>
-                  <itemPath>src/config/pic32mx470_curiosity/driver/usb/usbfs/src/drv_usbfs_device.c</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/drv_usbfs.c</itemPath>
+                  <itemPath>src/config/pic32mk_mcf100/driver/usb/usbfs/src/drv_usbfs_device.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/clk/plib_clk.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="evic" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/evic/plib_evic.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/evic/plib_evic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="gpio" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/gpio/plib_gpio.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="nvm" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/peripheral/nvm/plib_nvm.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/peripheral/nvm/plib_nvm.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f4" displayName="stdio" projectFiles="true">
-            <itemPath>src/config/pic32mx470_curiosity/stdio/xc32_monitor.c</itemPath>
+            <itemPath>src/config/pic32mk_mcf100/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f5" displayName="system" projectFiles="true">
             <logicalFolder name="f1" displayName="int" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/system/int/src/sys_int.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f6" displayName="usb" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_device_msd.c</itemPath>
-              <itemPath>src/config/pic32mx470_curiosity/usb/src/usb_device.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_device_msd.c</itemPath>
+              <itemPath>src/config/pic32mk_mcf100/usb/src/usb_device.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>src/config/pic32mx470_curiosity/initialization.c</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/interrupts.c</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/exceptions.c</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/usb_device_init_data.c</itemPath>
-          <itemPath>src/config/pic32mx470_curiosity/tasks.c</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/initialization.c</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/interrupts.c</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/exceptions.c</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/usb_device_init_data.c</itemPath>
+          <itemPath>src/config/pic32mk_mcf100/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>src/main.c</itemPath>
@@ -316,7 +293,7 @@
     <conf name="cutcutgo_bl" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC32MX470F512L</targetDevice>
+        <targetDevice>PIC32MK1024MCF100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>snap</platformTool>
@@ -325,7 +302,7 @@
         <platform>2</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MX_DFP" vendor="Microchip" version="1.5.259"/>
+        <pack name="PIC32MK-MC_DFP" vendor="Microchip" version="1.11.151"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -363,7 +340,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="src;src/config/pic32mx470_curiosity"/>
+                  value="src;src/config/pic32mk_mcf100"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>
@@ -661,7 +638,7 @@
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="memories.userotp" value="true"/>
         <property key="programmerToGoFilePath"
-                  value="/home/virtualabs/opt/Harmony3/usb_apps_device/apps/msd_basic/firmware/pic32mx470_curiosity.X/debug/pic32mx470_curiosity/pic32mx470_curiosity_ptg"/>
+                  value="/home/virtualabs/opt/Harmony3/usb_apps_device/apps/msd_basic/firmware/pic32mk_mcf100.X/debug/pic32mk_mcf100/pic32mk_mcf100_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -747,7 +724,7 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="programmerToGoFilePath"
-                  value="/home/virtualabs/opt/Harmony3/usb_apps_device/apps/msd_basic/firmware/pic32mx470_curiosity.X/debug/pic32mx470_curiosity/pic32mx470_curiosity_ptg"/>
+                  value="/home/virtualabs/opt/Harmony3/usb_apps_device/apps/msd_basic/firmware/pic32mk_mcf100.X/debug/pic32mk_mcf100/pic32mk_mcf100_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

@@ -63,9 +63,13 @@
  ******************************************/
 typedef enum
 {
-    PROGRAM_ERASE_OPERATION         = 0x5,
+    /* PIC32MK NVMOP encodings (NVM module 02819) */
+    PROGRAM_ERASE_OPERATION         = 0x7,
+    UPPER_PROGRAM_ERASE_OPERATION   = 0x6,
+    LOWER_PROGRAM_ERASE_OPERATION   = 0x5,
     PAGE_ERASE_OPERATION            = 0x4,
     ROW_PROGRAM_OPERATION           = 0x3,
+    QUAD_WORD_PROGRAM_OPERATION     = 0x2,
     WORD_PROGRAM_OPERATION          = 0x1,
     NO_OPERATION                    = 0x0,
 } NVM_OPERATION_MODE;
@@ -166,7 +170,7 @@ bool NVM_Read( uint32_t *data, uint32_t length, const uint32_t address )
 
 bool NVM_WordWrite( uint32_t data, uint32_t address )
 {
-    NVMDATA = (uint32_t )data;
+    NVMDATA0 = (uint32_t )data;
 
     NVM_StartOperationAtAddress( address,  WORD_PROGRAM_OPERATION);
 

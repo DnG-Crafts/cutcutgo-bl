@@ -48,7 +48,6 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "bsp/bsp.h"
 #include "driver/memory/drv_memory_nvm.h"
 #include "usb/usb_device_msd.h"
 #include "usb/usb_msd.h"

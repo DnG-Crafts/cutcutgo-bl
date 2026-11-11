@@ -1,53 +1,48 @@
 #include "buttons.h"
 
-/**
- * Initialize Cricut Maker buttons.
+/*
+ * Front-panel buttons (see buttons.h for the pin map).
+ * Active low with external pull-ups, so we don't touch the internal
+ * pull-ups/pull-downs: we only make each pin a digital input.
  */
+
+/* ANSELx (and its CLR alias at +4 bytes); ports repeat every 0x100 bytes. */
+static void button_make_digital_input(GPIO_PIN pin)
+{
+    uint32_t port = ((uint32_t)pin) >> 4;
+    uint32_t bit = ((uint32_t)pin) & 0x0FU;
+    volatile uint32_t *anselclr =
+        (volatile uint32_t *)((uint32_t)&ANSELA + (port * 0x100U) + 0x04U);
+
+    *anselclr = (1UL << bit);       /* digital (harmless if the pin has no analog function) */
+    GPIO_PinInputEnable(pin);
+}
 
 void buttons_init(void)
 {
-    /* Set B12 and B13 as digital IO. */
-    ANSELBbits.ANSB12 = 0;
-    ANSELBbits.ANSB13 = 0;
-    
-    /* Set buttons GPIO direction. */
-    GPIO_PinInputEnable(BTN_PAUSE);
-    GPIO_PinInputEnable(BTN_LOGO);
-    GPIO_PinInputEnable(BTN_POWER);
-    
-    /* Disable pull-ups. */
-    CNPUB &= ~((1 << (BTN_PAUSE & 0x0F)) | (1 << (BTN_LOGO & 0x0F)));
-    CNENB |= (1 << (BTN_PAUSE & 0x0F)) | (1 << (BTN_LOGO & 0x0F));
-    CNPUF &= ~(1 << (BTN_POWER & 0x0F));
-    CNENF |= (1 << (BTN_POWER & 0x0F));
+    button_make_digital_input(BTN_POWER);
+    button_make_digital_input(BTN_LOADUNLOAD);
+    button_make_digital_input(BTN_LOGO);
+    button_make_digital_input(BTN_PAUSE);
 }
 
-
-/**
- * Check if Pause button is pressed. No debounce is made here.
- * 
- * @return true if pressed, false otherwise.
- */
-
+/* No debounce here: callers time how long a button is held. */
 bool is_pause_button_pressed(void)
 {
-    volatile uint32_t portb = PORTB;
-    
-    /* Is pause button pressed ? */
-    return ((portb & (1 << (BTN_PAUSE & 0x0F))) == 0);
+    return !GPIO_PinRead(BTN_PAUSE);
 }
-
-/**
- * Check if Power button is pressed, no debounce.
- * 
- * @return true if pressed, false otherwise.
- */
 
 bool is_power_button_pressed(void)
 {
-    volatile uint32_t portf = PORTF;
-    
-    /* Is pause button pressed ? */
-    return ((portf & (1 << (BTN_POWER & 0x0F))) == 0);
+    return !GPIO_PinRead(BTN_POWER);
 }
 
+bool is_logo_button_pressed(void)
+{
+    return !GPIO_PinRead(BTN_LOGO);
+}
+
+bool is_loadunload_button_pressed(void)
+{
+    return !GPIO_PinRead(BTN_LOADUNLOAD);
+}

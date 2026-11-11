@@ -41,6 +41,7 @@
 // DOM-IGNORE-END
 
 #include "device.h"
+#include "configuration.h"
 #include "plib_evic.h"
 
 
@@ -55,8 +56,8 @@ void EVIC_Initialize( void )
     INTCONSET = _INTCON_MVEC_MASK;
 
     /* Set up priority and subpriority of enabled interrupts */
-    IPC6SET = 0x40000 | 0x0;  /* FCE:  Priority 1 / Subpriority 0 */
-    IPC7SET = 0x400 | 0x0;  /* USB_1:  Priority 1 / Subpriority 0 */
+    IPC7SET = 0x4000000U | 0x0U;  /* FLASH_CONTROL (IRQ 31):  Priority 1 / Subpriority 0 */
+    IPC8SET = 0x40000U | 0x0U;    /* USB_1 (IRQ 34):  Priority 1 / Subpriority 0 */
 
 
 }

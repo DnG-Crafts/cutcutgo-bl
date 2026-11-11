@@ -56,6 +56,7 @@
 
 #include "device.h"
 #include "plib_clk.h"
+#include "clock_config.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,18 +85,34 @@
 
 void CLK_Initialize( void )
 {
+    /* System PLL (SYSCLK = 120 MHz) is set up by the configuration bits,
+     * see initialization.c and clock_config.h. */
 
-    /* Code for fuse settings can be found in "initialization.c" */
-    
+    /* Unlock system for clock configuration */
+    SYSKEY = 0x00000000U;
+    SYSKEY = 0xAA996655U;
+    SYSKEY = 0x556699AAU;
 
-    /* Wait for PLL to be locked */
-    while(!OSCCONbits.SLOCK);
+    /* Configure the USB PLL for a 48 MHz USB clock from POSC.
+     * On PIC32MK this PLL is configured at run time (UPLLCON), unlike the
+     * PIC32MX where UPLLIDIV was a configuration bit. */
+    UPLLCON = UPLLCON_VALUE;
 
-    /* Peripheral Module Disable Configuration */
-    PMD1 = 0x1101;
-    PMD2 = 0x3;
-    PMD3 = 0x1f001f;
-    PMD4 = 0x1f;
-    PMD5 = 0x3031f;
-    PMD6 = 0x10001;
+    /* Lock system since done with clock configuration */
+    SYSKEY = 0x33333333U;
+
+    /* Wait for the system PLL and the USB PLL to be ready */
+    /* Bounded waits (all builds). Note: on the PIC32MK1024MCF100 the
+     * CLKSTAT.UPLLRDY flag was observed never to set even though the USB PLL
+     * runs and USB enumerates, so waiting for it forever hangs the bootloader.
+     * Microchip's own PIC32MK clock code doesn't wait for it either; we just
+     * give the PLLs time to lock. */
+    {
+        volatile uint32_t n = 2000000U;
+        while (((CLKSTAT & _CLKSTAT_SPLLRDY_MASK) == 0U) && (n != 0U)) { n--; }
+        n = 2000000U;
+        while (((CLKSTAT & _CLKSTAT_UPLLRDY_MASK) == 0U) && (n != 0U)) { n--; }
+    }
+
+    /* All peripherals are left enabled (PMDx reset values). */
 }
