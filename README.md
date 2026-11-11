@@ -2,7 +2,7 @@
 
 ## Bootloader features
 
-This bootloader lets you flash [custom firmware](https://github.com/DnG-Crafts/cutcutgo/releases) to the Cricut Maker3 over USB. When it runs, it appears on the computer as a mass-storage drive, and you drag and drop a compatible firmware file (UF2 format) onto it.
+This bootloader lets you flash [custom firmware](https://github.com/DnG-Crafts/cutcutgo) to the Cricut Maker3 over USB. When it runs, it appears on the computer as a mass-storage drive, and you drag and drop a compatible firmware file (UF2 format) onto it.
 
 When no application is installed, the bootloader starts the drive automatically and waits for a UF2 file.
 
