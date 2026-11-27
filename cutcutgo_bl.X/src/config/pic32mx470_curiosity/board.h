@@ -29,8 +29,8 @@
 #define APP_FLASH_START_PA      0x1D010000UL
 #define APP_FLASH_END_PA        0x1D080000UL   /* exclusive */
 
-/* How long the power button must be held at startup (about 3 s, as in the
- * original bootloader). */
-#define POWER_HOLD_MS           3000UL
+/* How long the power button must be held at startup: about 1 s, as on the
+ * Maker 3 / Explore 3 (the original bootloader used about 3 s). */
+#define POWER_HOLD_MS           1000UL
 
 #endif /* BOARD_H */

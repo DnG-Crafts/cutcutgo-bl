@@ -95,7 +95,7 @@ USB uses the USB1 module (D1+/D1-, pins 57/56), with VBUS sensing on pin 54. On 
 | Item | Original Cricut Maker |
 |---|---|
 | Chip, clock | PIC32MX470F512L, 16 MHz crystal, SYSCLK 96 MHz |
-| Power-on | hold **Power** for about 3 s, as in the original bootloader |
+| Power-on | hold **Power** for about 1 s. |
 | Update mode | hold **Pause** while powering on, or no firmware installed; copy a `.uf2` onto the drive. Hold **Power** about 4 s to leave without updating |
 | UF2 family ID | `0x4d414b52` ("MAKR"), as in the original bootloader, so existing Maker firmware `.uf2` files still flash |
 | App flash window | `0x1D010000`-`0x1D080000`; the app starts at `0x9D010000`, as on the Maker 3 |
